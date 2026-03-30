@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subha Harini | CSE Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00796B; 
+            --primary-accent: #009688; 
+            --dark-color: #37474F; 
+            --light-bg: #FFFFFF;
+            --card-bg: #F9FAFB;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --header-font: 'Playfair Display', serif;
+            --body-font: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--body-font); color: var(--dark-color); line-height: 1.6; background-color: var(--light-bg); scroll-behavior: smooth; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 20px 0; }
+        h1, h2, h3 { font-family: var(--header-font); color: var(--dark-color); }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
+        .title-underline { width: 50px; height: 4px; background-color: var(--primary-accent); margin: 0 auto 50px auto; border-radius: 2px; }
+
+        /* Navigation */
+        header { background: rgba(255, 255, 255, 0.95); padding: 20px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #f0f0f0; backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary-color); letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark-color); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* Hero Section */
+        #hero { text-align: center; padding: 120px 0; background: radial-gradient(circle at top right, #f0fdfa, #ffffff); }
+        .hero-pre-title { font-size: 0.9rem; color: var(--primary-accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; font-weight: 600; }
+        #hero h1 { font-size: 4rem; margin-bottom: 15px; line-height: 1.1; }
+        .hero-role { font-size: 1.4rem; color: #546e7a; margin-bottom: 25px; }
+        .hero-description { font-size: 1.1rem; color: #78909c; max-width: 650px; margin: 0 auto 40px auto; }
+
+        /* Buttons */
+        .btn-container { display: flex; gap: 15px; justify-content: center; }
+        .btn { padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 0.95rem; }
+        .btn-primary { background: var(--primary-color); color: #fff; border: 2px solid var(--primary-color); }
+        .btn-primary:hover { background: transparent; color: var(--primary-color); }
+        .btn-secondary { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
+        .btn-secondary:hover { background: var(--primary-color); color: #fff; }
+
+        /* About & Cards */
+        #about { padding: 100px 0; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+        .about-card { background: var(--card-bg); padding: 45px 30px; border-radius: 15px; text-align: center; transition: 0.4s; border: 1px solid #f1f5f9; }
+        .about-card:hover { transform: translateY(-10px); box-shadow: var(--card-shadow); background: #fff; }
+        .card-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+
+        /* Skills */
+        #skills { padding: 100px 0; background: #fcfcfc; }
+        .skills-wrap { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; max-width: 800px; margin: 0 auto; }
+        .skill-tag { padding: 12px 24px; background: #fff; color: var(--primary-color); border-radius: 12px; font-weight: 600; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+
+        /* Contact */
+        #contact { padding: 100px 0; text-align: center; }
+        .contact-box { max-width: 500px; margin: 40px auto 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .contact-link { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 18px; background: var(--card-bg); border-radius: 12px; text-decoration: none; color: var(--dark-color); font-weight: 500; transition: 0.3s; border: 1px solid #edf2f7; }
+        .contact-link:hover { background: #e0f2f1; border-color: var(--primary-accent); transform: scale(1.02); }
+        .icon-small { font-size: 1.2rem; }
+
+        footer { padding: 40px 0; background: #263238; color: #b0bec5; text-align: center; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">SUBHA HARINI S.</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <p class="hero-pre-title">Aspiring Engineer</p>
+            <h1>Subha Harini S</h1>
+            <p class="hero-role">1st Year CSE Student | Problem Solver</p>
+            <p class="hero-description">Passionate about mastering programming fundamentals and building efficient digital systems with code.</p>
+            <div class="btn-container">
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                <a href="#about" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Professional Path</h2>
+            <div class="title-underline"></div>
+            <div class="card-grid">
+                <div class="about-card">
+                    <span class="card-icon">🎓</span>
+                    <h3>Education</h3>
+                    <p>Currently pursuing B.E. in Computer Science and Engineering. Focused on foundational excellence in technology.</p>
+                </div>
+                <div class="about-card">
+                    <span class="card-icon">💻</span>
+                    <h3>Programming</h3>
+                    <p>Specializing in C, C++, and Python to develop structured logic and high-performance applications.</p>
+                </div>
+                <div class="about-card">
+                    <span class="card-icon">✨</span>
+                    <h3>Creativity</h3>
+                    <p>Blending technical skills with a creative eye for modern design and innovative software solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="title-underline"></div>
+            <div class="skills-wrap">
+                <div class="skill-tag">C Programming</div>
+                <div class="skill-tag">C++</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Data Analysis</div>
+                <div class="skill-tag">Logic Building</div>
+                <div class="skill-tag">Problem Solving</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="title-underline"></div>
+            <p>Ready to collaborate or chat about technology? Reach out below!</p>
+            
+            <div class="contact-box">
+                <a href="https://www.linkedin.com/in/subha-harini-623276377" target="_blank" class="contact-link">
+                    <span class="icon-small">🔗</span> Connect on LinkedIn
+                </a>
+                
+                <a href="mailto:harini.sh1309@gmail.com" class="contact-link">
+                    <span class="icon-small">✉️</span> harini.sh1309@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Subha Harini S. Built with Passion & Code.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
